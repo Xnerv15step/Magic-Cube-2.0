@@ -1,0 +1,316 @@
+/* ==========================================================================
+   1. 全域變數與主題設定 (CSS Variables)
+   ========================================================================== */
+:root {
+  /* 淺色模式色彩 */
+  --bg-color: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --accent-color: #4287f5;        /* 主題藍色 */
+  --accent-hover: #3366cc;
+  --danger-color: #dc3545;        /* 計時中紅色 */
+  --sidebar-bg: #f9f9f9;
+  --card-bg: #ffffff;
+  --border-color: #eeeeee;
+  --input-bg: #ffffff;
+  --formula-text: #d63384;        /* 公式粉色 */
+  --formula-bg: #fff0f6;
+  --scramble-bg: #f0f7ff;
+}
+
+body.dark-mode {
+  /* 深色模式色彩覆蓋 */
+  --bg-color: #121212;
+  --text-primary: #e0e0e0;
+  --text-secondary: #aaaaaa;
+  --sidebar-bg: #1e1e1e;
+  --card-bg: #2d2d2d;
+  --border-color: #444444;
+  --input-bg: #333333;
+  --scramble-bg: #1a2635;
+  --formula-bg: #3d202d;
+}
+
+/* ==========================================================================
+   2. 基礎佈局 (Base Layout)
+   ========================================================================== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: background 0.3s, color 0.3s;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem 2rem;
+  overflow-y: auto;
+  text-align: center;
+}
+
+/* ==========================================================================
+   3. 導航欄與按鈕 (Navbar & Buttons)
+   ========================================================================== */
+.navbar {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* 手機版自動換行 */
+}
+
+.nav-button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  background: var(--sidebar-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-button:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+.nav-button.active {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+/* 深色模式切換按鈕專屬樣式 */
+#dark-mode-toggle {
+  position: fixed; /* 固定在角落，或放在導航欄 */
+  top: 10px;
+  right: 20px;
+  z-index: 2000;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   4. 搜尋功能 (Search)
+   ========================================================================== */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+#formula-search {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#formula-search:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 8px rgba(66, 135, 245, 0.2);
+}
+
+/* ==========================================================================
+   5. 公式網格與卡片 (Formula Grid & Cards)
+   ========================================================================== */
+.formula-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  padding: 1rem 0;
+}
+
+.formula-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 12px;
+  min-height: 85px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.formula-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.case-image img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+}
+
+.case-code {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--text-secondary);
+}
+
+.case-algorithm {
+  font-family: 'Consolas', monospace;
+  font-size: 0.95rem;
+  color: var(--formula-text);
+  background-color: var(--formula-bg);
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-top: 6px;
+  cursor: pointer;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   6. 打亂練習區 (Scramble)
+   ========================================================================== */
+.scramble-container {
+  margin: 2rem auto;
+  max-width: 600px;
+  padding: 2rem;
+  background-color: var(--scramble-bg);
+  border-radius: 15px;
+  border: 2px dashed var(--accent-color);
+}
+
+.scramble-text {
+  font-family: 'Consolas', monospace;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin: 1.5rem 0;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.refresh-button {
+  padding: 0.8rem 2rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.refresh-button:hover { background-color: var(--accent-hover); }
+
+/* ==========================================================================
+   7. 計時器模組 (Timer)
+   ========================================================================== */
+.timer-container {
+  margin: 2rem auto;
+  max-width: 600px;
+  padding: 2.5rem;
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.timer-display {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 4.5rem;
+  font-weight: bold;
+  font-variant-numeric: tabular-nums; /* 防止數字寬度跳動 */
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.timer-button {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* 計時中狀態切換 */
+.timer-running .timer-display { color: var(--danger-color); }
+.timer-running .timer-button { background-color: var(--danger-color); }
+
+/* ==========================================================================
+   8. 右側轉法說明表 (Notation Sidebar)
+   ========================================================================== */
+.move-notation-table {
+  width: 300px;
+  padding: 1.5rem;
+  background-color: var(--sidebar-bg);
+  border-left: 1px solid var(--border-color);
+  overflow-y: auto;
+}
+
+.notation-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.notation-table th {
+  border-bottom: 2px solid var(--accent-color);
+  text-align: left;
+  padding: 10px 5px;
+}
+
+.notation-table td {
+  border-bottom: 1px solid var(--border-color);
+  padding: 8px 5px;
+}
+
+.td-code { font-weight: bold; color: var(--accent-color); }
+.td-note { color: var(--text-secondary); font-size: 0.8rem; }
+
+/* ==========================================================================
+   9. 訊息提示標籤 (Toast Notification)
+   ========================================================================== */
+.copy-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333333;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  z-index: 3000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  animation: slide-up 0.3s ease;
+}
+
+@keyframes slide-up {
+  from { bottom: 0; opacity: 0; }
+  to { bottom: 30px; opacity: 1; }
+}
+
+.copy-toast.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s;
+}

@@ -1,0 +1,23 @@
+export const pllCases = [
+    { id: 1, code: 'Aa', image: '/images/pll/Aa-Perm.png', algorithm: "x R' D R' U2 R D' R' U2 R2 x'" },
+    { id: 2, code: 'Ab', image: '/images/pll/Ab-Perm.png', algorithm: "x' R D' R U2 R' D R U2 R2 x" },
+    { id: 3, code: 'E', image: '/images/pll/E-Perm.png', algorithm: "x' R U' R' D R U R' D' R U R' D R U' R' D' x" },
+    { id: 4, code: 'F', image: '/images/pll/F-Perm.png', algorithm: "R' U2 R' d' R' F' R2 U' R' U R' F R F" },
+    { id: 5, code: 'Ga', image: '/images/pll/Ga-Perm.png', algorithm: "R2 U R' U R' U' R U' R2 D U' R U R' D'" },
+    { id: 6, code: 'Gb', image: '/images/pll/Gb-Perm.png', algorithm: "R' U' R U D' R2 U R' U R U' R U' R2 D" },
+    { id: 7, code: 'Gc', image: '/images/pll/Gc-Perm.png', algorithm: "R2 U' R U' R U R' U R2 D' U R' U' R D" },
+    { id: 8, code: 'Gd', image: '/images/pll/Gd-Perm.png', algorithm: "R U R' U' D R2 U' R U' R' U R' U R2 D'" },
+    { id: 9, code: 'H', image: '/images/pll/H-Perm.png', algorithm: "M2 U M2 U2 M2 U M2" },
+    { id: 10, code: 'Ja', image: '/images/pll/Ja-Perm.png', algorithm: "x R2 F R F' R U2 r' U r U2 x'" },
+    { id: 11, code: 'Jb', image: '/images/pll/Jb-Perm.png', algorithm: "R U R' F' R U R' U' R' F R2 U' R' U'" },
+    { id: 12, code: 'Na', image: '/images/pll/Na-Perm.png', algorithm: "L U' R U2 L' U R' L U' R U2 L' U R'" },
+    { id: 13, code: 'Nb', image: '/images/pll/Nb-Perm.png', algorithm: "R' U L' U2 R U' L R' U L' U2 R U' L" },
+    { id: 14, code: 'Ra', image: '/images/pll/Ra-Perm.png', algorithm: "R U' R' U' R U R D R' U' R D' R' U2 R'" },
+    { id: 15, code: 'Rb', image: '/images/pll/Rb-Perm.png', algorithm: "R2 F R U R U' R' F' U' R' F R F'" },
+    { id: 16, code: 'T', image: '/images/pll/T-Perm.png', algorithm: "R U R' U' R' F R2 U' R' U' R U R' F'" },
+    { id: 17, code: 'Ua', image: '/images/pll/Ua-Perm.png', algorithm: "R U' R U R U R U' R' U' R2" },
+    { id: 18, code: 'Ub', image: '/images/pll/Ub-Perm.png', algorithm: "R2 U R U R' U' R' U' R' U R'" },
+    { id: 19, code: 'V', image: '/images/pll/V-Perm.png', algorithm: "R' U R' d' R' F' R2 U' R' U R' F R F" },
+    { id: 20, code: 'Y', image: '/images/pll/Y-Perm.png', algorithm: "F R U' R' U' R U R' F' R U R' U' R' F R F'" },
+    { id: 21, code: 'Z', image: '/images/pll/Z-Perm.png', algorithm: "M2 U M2 U M' U2 M2 U2 M' U2" }
+];

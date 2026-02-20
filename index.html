@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>魔方CFOP公式練習網站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- 左側側欄 (對應 ScrambleSidebar) -->
+
+        <!-- 中間主內容區 -->
+        <main class="main-content">
+            <h1>CFOP 公式庫</h1>
+
+            <!-- 頁面選擇導航 (原本的 nav 按鈕) -->
+            <nav class="navbar">
+                
+                <button class="nav-button active" data-page="home">首頁</button>
+                <button class="nav-button" data-page="F2L">F2L 公式庫</button>
+                <button class="nav-button" data-page="OLL">OLL 公式庫</button>
+                <button class="nav-button" data-page="PLL">PLL 公式庫</button>
+                <button id="dark-mode-toggle">切換深色模式</button>
+
+            </nav>
+            <div class="search-container">
+    <input type="text" id="formula-search" placeholder="搜尋公式內容或編號 (例如: R U)...">
+</div>
+
+            <!-- 內容展示區塊 -->
+            <section id="content-display" class="content">
+                <div class="welcome-message">
+                    歡迎來到魔術方塊公式庫
+                </div>
+            </section>
+        </main>
+
+        <!-- 右側固定說明欄 (對應 MoveNotationTable) -->
+        <aside class="move-notation-table">
+            <h3>轉法代號說明</h3>
+            <div id="notation-list">
+                <!-- 這裡放置 U R L D F B 等說明 -->
+            </div>
+        </aside>
+    </div>
+
+    <!-- 引入你的 JS 邏輯 -->
+<!-- index.html -->
+ <script type="module" src="script.js"></script>
+</body>
+</html>
