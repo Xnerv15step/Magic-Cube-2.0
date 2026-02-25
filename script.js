@@ -366,6 +366,19 @@ function initNotationTable() {
     aside.appendChild(section);
 }
 
+
+const notationToggle = document.getElementById('notation-toggle');
+const notationAside = document.querySelector('.move-notation-table');
+
+if (notationToggle && notationAside) {
+  notationToggle.addEventListener('click', function() {
+    notationAside.classList.toggle('open');
+    notationToggle.textContent = notationAside.classList.contains('open') 
+      ? '收合說明' 
+      : '轉法說明';
+  });
+}
+
 // --- 程式碼最後的執行指令 ---
 initNotationTable();
 renderContent('home');

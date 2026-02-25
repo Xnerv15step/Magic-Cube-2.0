@@ -314,3 +314,64 @@ body {
   opacity: 0;
   transition: opacity 0.3s;
 }
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column; /* 改成上下排列 */
+  }
+
+  .move-notation-table {
+    width: 100%;          /* 取消固定寬度 */
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-display {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1rem 0.8rem;
+  }
+}
+
+#notation-toggle {
+  display: none; /* 桌機預設隱藏按鈕 */
+}
+
+@media (max-width: 768px) {
+  #notation-toggle {
+    display: inline-block; /* 手機才顯示按鈕 */
+  }
+
+  .app-container {
+    flex-direction: column;
+  }
+
+  .move-notation-table {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+    max-height: 0;           /* 預設隱藏 */
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 1.5rem;       /* 收合時無上下 padding */
+  }
+
+  .move-notation-table.open {
+    max-height: 600px;       /* 展開高度，比內容高就好 */
+    padding: 1.5rem;
+  }
+
+  .timer-display {
+    font-size: 3rem;
+  }
+
+  .main-content {
+    padding: 1rem 0.8rem;
+  }
+}
