@@ -13,8 +13,8 @@
   --card-bg: #ffffff;
   --border-color: #eeeeee;
   --input-bg: #ffffff;
-  --formula-text: #d63384;        /* 公式粉色 */
-  --formula-bg: #fff0f6;
+  --formula-text: #000000;        /* 公式黑色 */
+  --formula-bg: #f6f86d;
   --scramble-bg: #f0f7ff;
 }
 
@@ -28,7 +28,9 @@ body.dark-mode {
   --border-color: #444444;
   --input-bg: #333333;
   --scramble-bg: #1a2635;
-  --formula-bg: #3d202d;
+  --formula-bg: #00ccff;
+  --formula-text: #ffffff;       /* 公式白色 */
+
 }
 
 /* ==========================================================================
