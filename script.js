@@ -97,7 +97,10 @@ function createFormulaCard(item) {
     imgDiv.className = 'case-image';
     const img = document.createElement('img');
     img.src = item.image;
-    img.onerror = function() { this.src = 'https://via.placeholder.com'; };
+    img.onerror = function() {
+         this.src = 'https://placehold.co/65x65';
+         this.onerror = null; // 防止無限觸發 
+    };
     imgDiv.appendChild(img);
 
     const infoDiv = document.createElement('div');
